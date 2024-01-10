@@ -5,7 +5,7 @@ const { Post, Comment, User } = require('../models/');
 router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll({
-      include: [{ model: User, attributes: ['username'] }], // Only include necessary attributes from the User model
+      include: [{ model: User, attributes: ['username'] }],
     });
 
     const posts = postData.map((post) => post.get({ plain: true }));
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
     res.render('all-posts', { posts });
   } catch (err) {
     console.error('Error retrieving posts:', err);
-    res.status(500).json({ error: 'Internal Server Error: Get All Posts' });
+    res.status(500).json({ error: 'Internal Server Error: Get All Posts', details: err.message });
   }
 });
 
