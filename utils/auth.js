@@ -6,7 +6,7 @@ const withAuth = (req, res, next) => {
        return next();
      } catch (err) {
        console.error('Error in withAuth middleware:', err);
-       return res.status(500).json({ error: 'Internal Server Error' });
+       return res.status(500).json({ error: 'Internal Server Error: Error Authenticating' });
      }
    };
    

@@ -11,7 +11,7 @@ router.post('/', withAuth, async (req, res) => {
     res.status(201).json(newPost); // Use 201 status code for successful resource creation
   } catch (err) {
     console.error(err);
-    res.status(500).json({ error: 'Internal Server Error' }); // Provide a generic error message
+    res.status(500).json({ error: 'Internal Server Error: Post-Route /' }); // Provide a generic error message
   }
 });
 
@@ -30,7 +30,7 @@ router.put('/:id', withAuth, async (req, res) => {
     }
   } catch (err) {
     console.error(err);
-    res.status(500).json({ error: 'Internal Server Error' });
+    res.status(500).json({ error: 'Internal Server Error: Post-Route /:id' });
   }
 });
 
@@ -49,7 +49,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     }
   } catch (err) {
     console.error(err);
-    res.status(500).json({ error: 'Internal Server Error' });
+    res.status(500).json({ error: 'Internal Server Error: Delete-Post-Route /:id' });
   }
 });
 

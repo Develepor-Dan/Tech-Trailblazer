@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
     res.render('all-posts', { posts });
   } catch (err) {
     console.error('Error retrieving posts:', err);
-    res.status(500).json({ error: 'Internal Server Error' });
+    res.status(500).json({ error: 'Internal Server Error: Get All Posts' });
   }
 });
 
@@ -38,7 +38,7 @@ router.get('/post/:id', async (req, res) => {
     }
   } catch (err) {
     console.error('Error retrieving single post:', err);
-    res.status(500).json({ error: 'Internal Server Error' });
+    res.status(500).json({ error: 'Internal Server Error: Get Single Post' });
   }
 });
 
